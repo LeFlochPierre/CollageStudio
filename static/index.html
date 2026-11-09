@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collage Studio • Control room</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="/static/app.js" defer></script>
+</head>
+<body data-mode="control">
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-symbol"><span></span><span></span><span></span></div><div><strong>Collage Studio</strong><small>PHOTO + MOTION WALL</small></div></div>
+    <div class="sidebar-content">
+      <div class="eyebrow">PRESENTATION</div>
+      <div class="hero-title">A wall of <em>memories.</em></div>
+      <p class="subcopy">Photos and videos appear, accumulate, and begin again. Your projector gets its own clean screen.</p>
+      <div class="section-label"><span>01</span> SOURCES</div>
+      <div class="field-group"><label for="localFolder">Local photo folder</label><div class="input-wrap"><input id="localFolder" placeholder="C:\\Photos or /Users/me/Photos" /><button id="saveFolder" class="small-action" title="Save local folder">Save</button></div><small>Include nested folders. Or place files in this app's <code>media/</code> folder.</small></div>
+      <div class="field-group"><label for="driveFolder">Google Drive folder URL</label><div class="input-wrap"><input id="driveFolder" placeholder="https://drive.google.com/drive/folders/..." /><button id="saveDrive" class="small-action" title="Save Drive folder">Link</button></div><small>Requires one-time Google sign-in via <code>python connect_drive.py</code>.</small></div>
+      <div id="syncStatus" class="sync-pill"><span class="status-dot"></span><span>Checking source status…</span></div>
+      <button id="syncNow" class="quiet-button"><span>↻</span> Sync Google Drive now</button>
+      <div class="section-label"><span>02</span> COMPOSITION</div>
+      <div class="range-group"><div class="range-title"><label for="interval">New item every</label><output id="intervalValue">5 seconds</output></div><input id="interval" type="range" min="1" max="30" step="1" value="5" /></div>
+      <div class="range-group"><div class="range-title"><label for="capacity">Fill the wall with</label><output id="capacityValue">22 items</output></div><input id="capacity" type="range" min="3" max="150" step="1" value="22" /></div>
+      <div class="toggle-row"><div><strong>Videos too</strong><small>Muted by default to autoplay</small></div><label class="switch"><input id="mixVideos" type="checkbox" checked><span></span></label></div>
+      <div class="toggle-row"><div><strong>Shuffle content</strong><small>Mix photos and their positions</small></div><label class="switch"><input id="shuffle" type="checkbox" checked><span></span></label></div>
+      <div class="toggle-row"><div><strong>Video audio</strong><small>Requires an interaction on the projector</small></div><label class="switch"><input id="videoSound" type="checkbox"><span></span></label></div>
+    </div>
+    <div class="sidebar-bottom"><div class="green-light"></div><span id="savedMessage">Ready to create something lovely</span></div>
+  </aside>
+  <main class="workspace">
+    <header class="topbar"><div class="breadcrumb"><span>COLLAGE STUDIO</span><span class="slash">/</span> Live preview</div><div class="top-actions"><span id="libraryCount" class="library-badge">0 items</span><button id="reset" class="ghost-btn">↻ Restart</button><button id="pause" class="ghost-btn">Ⅱ Pause</button><button id="openDisplay" class="primary-btn"><span class="play-mark">▶</span> Open projector view <span>↗</span></button></div></header>
+    <section class="stage-area"><div class="stage-frame"><div id="stage" class="collage-stage"><div class="ambient ambient-one"></div><div class="ambient ambient-two"></div><div id="emptyState" class="stage-empty"><div class="placeholder-photos"><i></i><i></i><i></i></div><h2>Your canvas awaits.</h2><p>Add images to the <b>media</b> folder or connect Google Drive.<br>They'll fill this space one beautiful moment at a time.</p></div><div id="stageCount" class="stage-count"></div></div></div><div class="stage-caption"><div class="live-indicator"><span></span> LIVE CANVAS</div><div class="caption-right">16:9 · Built for projection · <span id="captionCount">0 images loaded</span></div></div></section>
+    <footer class="workspace-footer"><span>TIP: Plug in your projector as a second display, then move the projector view to it.</span><span>ESC to exit fullscreen</span></footer>
+  </main>
+</div>
+</body></html>

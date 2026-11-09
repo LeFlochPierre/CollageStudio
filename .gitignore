@@ -1,0 +1,39 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Google Drive authentication — NEVER commit
+secrets/
+credentials.json
+token.json
+
+# Downloaded and personal media
+media/
+cache/
+
+# Local settings and application state
+state.json
+.env
+.env.*
+!.env.example
+
+# Temporary and log files
+*.log
+*.tmp
+*.bak
+*.sqlite
+*.sqlite3
+
+# Operating system / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
